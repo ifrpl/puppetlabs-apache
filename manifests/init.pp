@@ -39,6 +39,7 @@ class apache {
   case $::operatingsystem {
     'centos', 'redhat', 'fedora', 'scientific': {
       file { 'httpd_sites-enabled.conf' :
+        path => '/home/httpd/conf.d/sites-enabled.conf',
         ensure => file,
         owner => root,
         group => root,
