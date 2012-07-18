@@ -35,4 +35,15 @@ class apache {
     notify  => Service['httpd'],
     require => Package['httpd'],
   }
+
+  case $::operatingsystem {
+    'centos', 'redhat', 'fedora', 'scientific': {
+      file { 'httpd_sites-enabled.conf' :
+        ensure => file,
+        owner => root,
+        group => root,
+        content => ('apache/sites-enabled.conf.erb')
+      }
+    }
+  }
 }

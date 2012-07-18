@@ -39,7 +39,7 @@ class apache::params {
       $mod_wsgi_package = 'mod_wsgi'
       $ssl_package = 'mod_ssl'
       $apache_dev  = 'httpd-devel'
-      $vdir = '/etc/httpd/conf.d/'
+      $vdir = '/etc/httpd/sites-enabled/'
     }
     'ubuntu', 'debian': {
       $apache_name = 'apache2'
