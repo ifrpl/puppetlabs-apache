@@ -14,10 +14,11 @@ NameVirtualHost <%= vhost_name %>:<%= port %>
 <% elsif serveraliases != '' -%>
 <%= "  ServerAlias #{serveraliases}" -%>
 <% end -%>
+
   DocumentRoot <%= docroot %>
   <Directory <%= docroot %>>
     Options <%= options %>
-    AllowOverride None
+    AllowOverride <%= override %>
     Order allow,deny
     allow from all
   </Directory>
